@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-6 offset-3">
+        <mat-card class="example-card">
+            <mat-card-header>
+             
+              <mat-card-title class="text-center">SUCURSAL N°{{dato.identificador}}</mat-card-title>
+              
+            </mat-card-header>
+            <mat-card-content>
+              <label> <b>Nombre :</b> {{dato.nombre}}</label> <br>
+              <label> <b>Direccion :</b>  {{dato.direccion}}</label> <br>
+              <label> <b>Ciudad :</b>  {{dato.ciudad}}</label> <br>
+              <label> <b>Telefono :</b>  {{dato.telefono}}</label> <br>
+            </mat-card-content>
+            <mat-card-actions>
+                    <button mat-raised-button color="primary" (click)="back()">Volver Atras</button>
+              
+            </mat-card-actions>
+          </mat-card>
+    </div>
+</div>

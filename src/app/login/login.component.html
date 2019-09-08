@@ -1,0 +1,42 @@
+<div class="row">
+    
+    <div class="offset-4 col-4">
+        <mat-card>
+         <div class="row justify-content-center">
+          <div class="offset-2 col-6">
+              <mat-card-title>
+                  LOGIN 
+                  <br><br>
+                  
+                </mat-card-title>
+          </div>
+         </div>
+          <div class="row">  
+            <div class="offset-3 col-6">
+              <img  class="rounded-10" mat-card-image src="https://image.flaticon.com/icons/png/512/486/486730.png">
+            </div>
+          </div>
+         <div>
+            <form [formGroup]="myForm" action="">
+                <div class="form-group">
+                    <mat-form-field class="input-login">
+                        <input matInput placeholder="Direccion de Correo" required formControlName="email">
+                      </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field class="input-login">
+                        <input matInput placeholder="Contraseña" required formControlName="password">
+                      </mat-form-field>
+                </div>
+    
+                
+    
+                <button mat-raised-button color="primary" routerLink="/menu" class="btn-block">Ingresar</button>
+                
+              </form>
+         </div>
+         
+    </mat-card>
+      </div>
+
+</div>

@@ -1,0 +1,29 @@
+a {
+    text-decoration: none;
+  
+    text-align: center;
+}
+li {
+    
+    background: #ef5201;
+    color: #212121;
+    list-style: none;
+    
+}
+
+ul {
+    padding-inline-start:0px;
+    border-radius: 10px;
+    margin: 0;
+}
+
+a:hover {
+    cursor: pointer;
+    background: #2105e3;
+    color: white;
+}
+
+.btn {
+    height: 100%;
+ 
+}
