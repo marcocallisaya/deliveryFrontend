@@ -1,11 +1,11 @@
+*{
+  margin-top: 15px;
+}
 .example-card {
     max-width: 400px;
+    background: #3C6967;
   }
-  
-  .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
-  }
+
 
 label {
     font-size: 1.2rem;

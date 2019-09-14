@@ -21,7 +21,12 @@ export class SucursalServiceService {
     
     return this.http.get<sucursal>(`${'http://127.0.0.1:8000/sucursals/'}${id}`);
   }
-  sendAll(data):Observable<sucursal>
+  sucursalBusqueda(filtro:string):Observable<sucursal[]>
+  {
+    
+    return this.http.get<sucursal[]>('http://127.0.0.1:8000/sucursalsB?filtro='+filtro);
+  }
+  send(data):Observable<sucursal>
   {
     return this.http.post<sucursal>('http://127.0.0.1:8000/sucursals',data);
   }

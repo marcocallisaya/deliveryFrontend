@@ -27,8 +27,6 @@ export class SucursalVistaComponent implements OnInit {
       if (Number.isInteger(id))
       {
         this.Sucursal.sucursalOne(id).subscribe((res:any)=> this.dato=res.data);
-       // this.myform.setValue(this.dato);
-     
       }
       
       });

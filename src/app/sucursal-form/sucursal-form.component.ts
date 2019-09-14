@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, AfterContentInit, } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { SucursalServiceService } from '../sucursal-service.service';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { sucursal } from '../datos/sucursal.model';
 
 @Component({
@@ -11,24 +11,23 @@ import { sucursal } from '../datos/sucursal.model';
 })
 export class SucursalFormComponent implements OnInit {
 
-  myform:FormGroup;
-  constructor(private Sucursal:SucursalServiceService,private route:ActivatedRoute) {  }
+  
+  constructor(private Sucursal:SucursalServiceService,private route:ActivatedRoute,private router:Router) {  }
 
-  @Input() tipoForm;
+  
 
-  public dato=
-    
-   {
+  public dato={
             identificador:0,
             nombre: 'Juan',
             direccion: 'B/..',
             ciudad: 'SC',
-            telefono: '3',
-           
+            telefono: '3',   
   }; 
-  formNew:boolean =true;
-  formUpdate:boolean = false;
+  formNew:boolean;
+  formUpdate:boolean;
   codigo:number = 0;
+
+
   ngOnInit() {
     this.route.paramMap.subscribe((params:ParamMap)=>
     {
@@ -36,12 +35,18 @@ export class SucursalFormComponent implements OnInit {
       if (Number.isInteger(id))
       {
         this.Sucursal.sucursalOne(id).subscribe((res:any)=> this.dato=res.data);
-       // this.myform.setValue(this.dato);
+       console.log('es numero');
+       this.formNew = false;
+       this.formUpdate = true;
      
       }
-     
-       this.formNew = !this.formNew;
-       this.formUpdate = !this.formUpdate;
+      else{
+        console.log('no es numero');
+        this.formNew = true;
+        this.formUpdate = false;
+      }
+      
+       
        this.codigo = id;
       
       });
@@ -54,15 +59,20 @@ export class SucursalFormComponent implements OnInit {
  
   send()
   {
-   console.log(this.dato);
-    //this.Sucursal.sendAll(data.value).subscribe();
+   this.Sucursal.send(this.dato).subscribe();
     console.log('exitoso');
+    this.router.navigate(['/menu',{outlets: {this: ['sucursal']}}]);
   }
 
   update()
   {
-
     this.Sucursal.update(this.codigo,this.dato).subscribe(resp=>console.log(resp));
+    
+  }
 
+  back()
+  {
+    this.router.navigate(['/menu',{outlets: {this: ['sucursal']}}], 
+  );
   }
 }
