@@ -1,0 +1,12 @@
+*{
+    margin-top: 15px;
+  }
+  .example-card {
+      max-width: 400px;
+      background: #3C6967;
+    }
+  
+  
+  label {
+      font-size: 1.2rem;
+  }

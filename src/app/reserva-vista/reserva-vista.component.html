@@ -1,0 +1,28 @@
+<div class="row">
+        <div class="col-5 offset-3">
+            <mat-card class="example-card">
+               
+                 
+                    <mat-card-header>
+                 
+                    <mat-card-title >RESERVA N°{{dato.identificador}}</mat-card-title>
+    
+                  
+                  </mat-card-header>
+             
+                  
+              
+                <mat-card-content>
+            
+                  <label> <b>Monto Pendiente:</b>  {{dato. montoPendiente|number:'1.2'|currency:'Bs '}}</label> <br>
+                  <label> <b>Monto Adelantado :</b>  {{dato. montoAdelantado|number:'1.2'|currency:'Bs '}}</label> <br>
+                  <label> <b>Fecha de Entrega :</b>  {{dato.fechaEntrega}}</label> <br>
+                  <label> <b>Pedido :</b>  {{dato.pedido}}</label> <br>
+                </mat-card-content>
+                <mat-card-actions>
+                        <button class="btn btn-block btn-lg btn-primary" (click)="back()">Volver Atras</button>
+                </mat-card-actions>
+              </mat-card>
+        </div>
+    </div>
+    

@@ -1,9 +1,7 @@
 import { Component, OnInit, Output, Inject, OnDestroy } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
 import { SucursalServiceService } from '../sucursal-service.service';
 import { sucursal } from '../datos/sucursal.model';
 import { Subscription } from 'rxjs';
-import { pagina } from '../datos/pagina.model';
 import { EventEmitter } from 'events';
 import { Router, ActivatedRoute } from '@angular/router';
 

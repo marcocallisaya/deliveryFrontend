@@ -1,0 +1,13 @@
+*{
+    margin-top: 5px;
+}
+
+table {
+    width: 100%;
+  }
+
+  .btn-sm
+  {
+      padding: 0rem 1rem;
+      border-radius: 5px;
+  }

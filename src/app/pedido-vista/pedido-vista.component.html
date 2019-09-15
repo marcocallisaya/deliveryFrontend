@@ -1,0 +1,28 @@
+<div class="row">
+        <div class="col-5 offset-3">
+            <mat-card class="example-card">
+               
+                 
+                    <mat-card-header>
+                 
+                    <mat-card-title >PEDIDO N°{{dato.identificador}}</mat-card-title>
+    
+                  
+                  </mat-card-header>
+             
+                  
+              
+                <mat-card-content>
+                  <label> <b>Precio :</b> {{dato.precio}}</label> <br>
+                  <label> <b>Estado:</b>  {{dato.estado}}</label> <br>
+                  <label> <b>Cliente :</b>  {{dato.cliente}}</label> <br>
+                  <label> <b>Conductor :</b>  {{dato.conductor}}</label> <br>
+                  <label> <b>Administrador :</b>  {{dato.administrador}}</label> <br>
+                </mat-card-content>
+                <mat-card-actions>
+                        <button class="btn btn-block btn-lg btn-primary" (click)="back()">Volver Atras</button>
+                </mat-card-actions>
+              </mat-card>
+        </div>
+    </div>
+    

@@ -1,8 +1,6 @@
-import { Component, OnInit, Input, AfterContentInit, } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit} from '@angular/core';
 import { SucursalServiceService } from '../sucursal-service.service';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { sucursal } from '../datos/sucursal.model';
 
 @Component({
   selector: 'app-sucursal-form',

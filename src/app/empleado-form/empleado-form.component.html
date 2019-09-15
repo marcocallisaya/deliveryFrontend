@@ -1,1 +1,66 @@
-<p>empleado-form works!</p>
+<div class="row">
+        <div class="col-8 offset-2">
+                <form action="" method="POST">
+                        <div class="form-group">
+                                <mat-form-field class="input">         
+                                    <input matInput placeholder="Nombre" required name="nombre" 
+                                  [(ngModel)]="dato.nombre">
+                                  </mat-form-field>
+                            </div>
+                            <div class="form-group">
+                                    <mat-form-field class="input">
+                                    <input matInput placeholder="Apellido" required name="apellido" 
+                                        [(ngModel)]="dato.apellidos"
+                                        >
+                                     </mat-form-field>
+                           </div>
+                              
+                           <div class="form-group">
+                                        <mat-form-field class="input">
+                                        <input matInput placeholder="Correo" required name="correo" [(ngModel)]="dato.correo">
+                                        </mat-form-field>
+                           </div>
+                                  
+                           <div class="form-group">
+                                            <mat-form-field class="input">
+                                            <input matInput placeholder="Direccion" required name="direccion"  [(ngModel)]="dato.direccion">
+                                            </mat-form-field>
+                           </div>
+                           <div class="form-group">
+                                        <mat-form-field class="input">         
+                                            <input matInput placeholder="Telefono" required name="telefono" 
+                                          [(ngModel)]="dato.telefono">
+                                          </mat-form-field>
+                                    </div>
+                                    <div class="form-group">
+                                            <mat-form-field class="input">
+                                            <input matInput placeholder="Carnet" required name="carnet" 
+                                                [(ngModel)]="dato.carnet"
+                                                >
+                                             </mat-form-field>
+                                   </div>
+                                      
+                                   <div class="form-group">
+                                                <mat-form-field class="input">
+                                                <input matInput placeholder="Cargo" required name="cargo" [(ngModel)]="dato.cargo">
+                                                </mat-form-field>
+                                   </div>
+                                          
+                                   <div class="form-group">
+                                                    <mat-form-field class="input">
+                                                    <input matInput placeholder="Sucursal" required name="sucursal"  [(ngModel)]="dato.sucursal">
+                                                    </mat-form-field>
+                                   </div>  
+                                   <div class="form-group" *ngIf="formNew">
+                                                <mat-form-field class="input">
+                                                <input matInput placeholder="Contraseña" required name="contrasena" type="password" [(ngModel)]="dato.contrasena">
+                                                </mat-form-field>
+                               </div>                    
+                    <button *ngIf="formNew" (click)="send()" class="btn btn-success btn-lg btn-block" >Enviar</button>
+                   
+                </form>
+                <button  *ngIf="formUpdate" class="btn btn-primary btn-lg btn-block" (click)="update()" >Actualizar</button>
+                <button class="btn btn-secondary btn-lg btn-block" (click)="back()">Volver Atras</button>
+        </div>
+    </div>
+    

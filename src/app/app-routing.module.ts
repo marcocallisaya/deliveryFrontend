@@ -15,6 +15,15 @@ import { CategoriaFormComponent } from './categoria-form/categoria-form.componen
 import { ProveedorComponent } from './proveedor/proveedor.component';
 import { ProveedorFormComponent } from './proveedor-form/proveedor-form.component';
 import { SucursalVistaComponent } from './sucursal-vista/sucursal-vista.component';
+import { EmpleadoVistaComponent } from './empleado-vista/empleado-vista.component';
+import { ClienteVistaComponent } from './cliente-vista/cliente-vista.component';
+import { PedidoVistaComponent } from './pedido-vista/pedido-vista.component';
+import { CategoriaVistaComponent } from './categoria-vista/categoria-vista.component';
+import { ProveedorVistaComponent } from './proveedor-vista/proveedor-vista.component';
+import { ProductoVistaComponent } from './producto-vista/producto-vista.component';
+import { ProductoFormComponent } from './producto-form/producto-form.component';
+import { ProductoComponent } from './producto/producto.component';
+import { ReservaVistaComponent } from './reserva-vista/reserva-vista.component';
 
 const routes: Routes = [
   
@@ -26,14 +35,28 @@ const routes: Routes = [
     {path:'sucursalVista/:id',component:SucursalVistaComponent,outlet:'this'},
     {path:'empleado',component:EmpleadoComponent,outlet:'this'},
     {path:'empleadoForm',component:EmpleadoFormComponent,outlet:'this'},
+    {path:'empleadoForm/:id',component:EmpleadoFormComponent,outlet:'this'},
+    {path:'empleadoVista/:id',component:EmpleadoVistaComponent,outlet:'this'},
     {path:'cliente',component:ClienteComponent,outlet:'this'},
     {path:'clienteForm',component:ClienteFormComponent,outlet:'this'},
+    {path:'clienteForm/:id',component:ClienteFormComponent,outlet:'this'},
+    {path:'clienteVista/:id',component:ClienteVistaComponent,outlet:'this'},
     {path:'pedido',component:PedidoComponent,outlet:'this'},
+    {path:'pedidoVista/:id',component:PedidoVistaComponent,outlet:'this'},
     {path:'reserva',component:ReservaComponent,outlet:'this'},
+    {path:'reservaVista/:id',component:ReservaVistaComponent,outlet:'this'},
     {path:'categoria',component:CategoriaComponent,outlet:'this'},
     {path:'categoriaForm',component:CategoriaFormComponent,outlet:'this'},
+    {path:'categoriaForm/:id',component:CategoriaFormComponent,outlet:'this'},
+    {path:'categoriaVista/:id',component:CategoriaVistaComponent,outlet:'this'},
     {path:'proveedor',component:ProveedorComponent,outlet:'this'},
     {path:'proveedorForm',component:ProveedorFormComponent,outlet:'this'},
+    {path:'proveedorForm/:id',component:ProveedorFormComponent,outlet:'this'},
+    {path:'proveedorVista/:id',component:ProveedorVistaComponent,outlet:'this'},
+    {path:'producto',component:ProductoComponent,outlet:'this'},
+    {path:'productoForm',component:ProductoFormComponent,outlet:'this'},
+    {path:'productoForm/:id',component:ProductoFormComponent,outlet:'this'},
+    {path:'productoVista/:id',component:ProductoVistaComponent,outlet:'this'},
 
   ]},
  
@@ -61,5 +84,14 @@ export const RoutingComponents = [
     CategoriaFormComponent,
     ProveedorComponent,
     ProveedorFormComponent,
-    SucursalVistaComponent
+    SucursalVistaComponent,
+    EmpleadoVistaComponent,
+    ClienteVistaComponent,
+    PedidoVistaComponent,
+    CategoriaVistaComponent,
+    ProveedorVistaComponent,
+    ProductoComponent,
+    ProductoFormComponent,
+    ProductoVistaComponent,
+    ReservaVistaComponent
 ]

@@ -1,0 +1,41 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import {cliente} from './datos/cliente.model'
+import { Observable } from 'rxjs';
+@Injectable({
+  providedIn: 'root'
+})
+export class ClienteService {
+
+  constructor(private http:HttpClient) { }
+
+  clienteAll():Observable<cliente[]>
+    {
+      return this.http.get<cliente[]>('http://127.0.0.1:8000/clientes');
+    }
+
+  clienteOne(id:number):Observable<cliente>
+  {
+    
+    return this.http.get<cliente>(`${'http://127.0.0.1:8000/clientes/'}${id}`);
+  }
+  clienteBusqueda(filtro:string):Observable<cliente[]>
+  {
+    
+    return this.http.get<cliente[]>('http://127.0.0.1:8000/clientesB?filtro='+filtro);
+  }
+  send(data):Observable<cliente>
+  {
+    return this.http.post<cliente>('http://127.0.0.1:8000/clientes',data);
+  }
+  update(codigo:number, data)
+  {
+    return this.http.put<cliente>(`${'http://127.0.0.1:8000/clientes/'}${codigo}`,data);
+  }
+
+  delete(id:number)
+  {
+    return this.http.delete<cliente>(`${'http://127.0.0.1:8000/clientes/'}${id}`);
+  }
+
+}

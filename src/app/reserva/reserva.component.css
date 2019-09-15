@@ -1,0 +1,14 @@
+*{
+    margin-top: 5px;
+}
+
+table {
+    width: 60%;
+    margin: auto;
+  }
+
+  .btn-sm
+  {
+      padding: 0rem 1rem;
+      border-radius: 5px;
+  }
