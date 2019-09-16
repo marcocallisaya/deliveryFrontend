@@ -27,6 +27,7 @@ import { ReservaVistaComponent } from './reserva-vista/reserva-vista.component';
 import { AutoComponent } from './auto/auto.component';
 import { AutoFormComponent } from './auto-form/auto-form.component';
 import { AutoVistaComponent } from './auto-vista/auto-vista.component';
+import { AfterloginService } from './afterlogin.service';
 
 const routes: Routes = [
   
@@ -65,7 +66,7 @@ const routes: Routes = [
     {path:'autoForm/:id',component:AutoFormComponent,outlet:'this'},
     {path:'autoVista/:id',component:AutoVistaComponent,outlet:'this'},
 
-  ]},
+  ],canActivate:[AfterloginService]},
  
   {path:'',redirectTo:'login',pathMatch:'full'},
 ];

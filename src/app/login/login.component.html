@@ -1,7 +1,7 @@
 <div class="row">
     
     <div class="offset-4 col-4">
-        <mat-card>
+       <!--  <mat-card>
          <div class="row justify-content-center">
           <div class="offset-2 col-6">
               <mat-card-title>
@@ -36,7 +36,41 @@
               </form>
          </div>
          
-    </mat-card>
+       </mat-card> -->
+       <div class="card">
+          <div class="card-header">
+            Login Here
+      
+          </div>
+          <div class="card-body">
+            <form #loginForm=ngForm (ngSubmit)="onSubmit()" >
+              <div class="alert alert-danger" [hidden]="!error">
+                {{error}}
+              </div>
+              <div class="form-group row">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" id="inputEmail3" placeholder="Email" [(ngModel)]="form.email" required name="email">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-10">
+                  <input type="password" class="form-control" id="inputPassword3" placeholder="Password" [(ngModel)]="form.password" required name="password">
+                </div>
+              </div>
+             
+            
+              <div class="form-group row">
+                <div class="offset-2 col-sm-10">
+                  <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Sign in</button>
+                  <a routerLink="/signup" class="btn btn-info float-right">SignUp</a>
+                </div>
+                
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
 
 </div>
