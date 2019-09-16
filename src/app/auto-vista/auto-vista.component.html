@@ -1,0 +1,28 @@
+<div class="row">
+        <div class="col-6 offset-3">
+            <mat-card class="example-card">
+               
+                 
+                    <mat-card-header>
+                 
+                    <mat-card-title >AUTO N°{{dato.identificador}}</mat-card-title>
+    
+                  
+                  </mat-card-header>
+             
+                  
+              
+                <mat-card-content>
+                  <label> <b>Modelo :</b> {{dato.modeloAuto}}</label> <br>
+                  <label> <b>Placa:</b>  {{dato.placaAuto}}</label> <br>
+                  <label> <b>Conductor :</b>  {{dato.conductor}}</label> <br>
+                  <label> <b>Fecha de Registro :</b>  {{dato.fechaCreacion}}</label> <br>
+                </mat-card-content>
+                <mat-card-actions>
+                        <button class="btn btn-block btn-lg btn-primary" (click)="back()">Volver Atras</button>
+                </mat-card-actions>
+              </mat-card>
+        </div>
+       
+    </div>
+    

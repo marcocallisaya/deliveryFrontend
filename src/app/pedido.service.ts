@@ -19,6 +19,25 @@ export class PedidoService {
     
     return this.http.get<pedido>(`${'http://127.0.0.1:8000/pedidos/'}${id}`);
   }
+
+  pedidoCliente(id:number):Observable<pedido>
+  {
+    
+    return this.http.get<pedido>(`${'http://127.0.0.1:8000/pedido/'}${id}${'/cliente'}`);
+  }
+
+  pedidoEmpleado(id:number):Observable<pedido>
+  {
+    
+    return this.http.get<pedido>(`${'http://127.0.0.1:8000/pedido/'}${id}${'/empleado'}`);
+  }
+
+  pedidoProductos(id:number):Observable<pedido>
+  {
+    
+    return this.http.get<pedido>(`${'http://127.0.0.1:8000/pedido/'}${id}${'/productos'}`);
+  }
+
   pedidoBusqueda(filtro:string):Observable<pedido[]>
   {
     

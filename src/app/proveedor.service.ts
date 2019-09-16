@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {proveedor} from './datos/proveedor.model'
 import { Observable } from 'rxjs';
+import { producto } from './datos/producto.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -19,6 +20,13 @@ export class ProveedorService {
     
     return this.http.get<proveedor>(`${'http://127.0.0.1:8000/proveedores/'}${id}`);
   }
+
+  proveedorProducts(id:number):Observable<producto[]>
+  {
+    
+    return this.http.get<producto[]>(`${'http://127.0.0.1:8000/proveedor/'}${id}${'/productos'}`);
+  }
+
   proveedorBusqueda(filtro:string):Observable<proveedor[]>
   {
     

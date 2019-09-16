@@ -1,5 +1,5 @@
 *{
-    margin-top: 15px;
+    margin-top: 5px;
   }
   .example-card {
       max-width: 400px;
@@ -9,4 +9,12 @@
   
   label {
       font-size: 1.2rem;
+  }
+  table{
+    width: 100%;
+  }
+  .btn-sm
+  {
+      padding: 0rem 1rem;
+      border-radius: 5px;
   }

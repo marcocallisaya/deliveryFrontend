@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ParamMap, ActivatedRoute, Router } from '@angular/router';
 import { PedidoService } from '../pedido.service';
+import { cliente } from '../datos/cliente.model';
+import { empleado } from '../datos/empleado.model';
+import { producto } from '../datos/producto.model';
 @Component({
   selector: 'app-pedido-vista',
   templateUrl: './pedido-vista.component.html',
@@ -21,6 +24,11 @@ export class PedidoVistaComponent implements OnInit {
     administrador:0
           
  }; 
+ productos: producto[] ;
+ cliente:cliente;
+ empleado:empleado;
+
+ displayedColumns: string[] = ['nombre', 'precio', 'estado','ver'];
   ngOnInit() {
     this.route.paramMap.subscribe((params:ParamMap)=>
     {
@@ -28,6 +36,9 @@ export class PedidoVistaComponent implements OnInit {
       if (Number.isInteger(id))
       {
         this.pedido.pedidoOne(id).subscribe((res:any)=> this.dato=res.data);
+        this.pedido.pedidoCliente(id).subscribe((res:any)=> this.cliente=res.data);
+        this.pedido.pedidoEmpleado(id).subscribe((res:any)=> this.empleado=res.data);
+        this.pedido.pedidoProductos(id).subscribe((res:any)=> this.productos=res.data);
       }
       
       });
@@ -36,6 +47,23 @@ export class PedidoVistaComponent implements OnInit {
   back()
   {
     this.router.navigate(['/menu',{outlets: {this: ['pedido']}}], 
+  );
+  }
+
+  goToView()
+  {
+    this.router.navigate(['/menu',{outlets: {this: ['clienteVista',this.cliente.identificador]}}], 
+  );
+  }
+
+  goToEmpleado()
+  {
+    this.router.navigate(['/menu',{outlets: {this: ['empleadoVista',this.empleado.identificador]}}], 
+  );
+  }
+  goToProduct(id)
+  {
+    this.router.navigate(['/menu',{outlets: {this: ['productoVista',id]}}], 
   );
   }
 }

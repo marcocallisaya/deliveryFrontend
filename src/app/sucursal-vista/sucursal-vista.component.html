@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-5 offset-3">
+    <div class="col-6 ">
         <mat-card class="example-card">
            
              
@@ -22,5 +22,104 @@
                     <button class="btn btn-block btn-lg btn-primary" (click)="back()">Volver Atras</button>
             </mat-card-actions>
           </mat-card>
+
+          <div class="row">
+            <h5 class="text-center">LISTA DE PRODUCTOS</h5>
+            <div class="col-12">
+        
+                    <table mat-table [dataSource]="productos" class="mat-elevation-z8">
+        
+                            <!--- Note that these columns can be defined in any order.
+                                  The actual rendered columns are set as a property on the row definition" -->
+                          
+                            <!-- Position Column -->
+                           
+                            <!-- Name Column -->
+                            <ng-container matColumnDef="nombre">
+                                    <th mat-header-cell *matHeaderCellDef class="text-center"> Nombre </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+                                  </ng-container>
+                            <!-- Name Column -->
+                            <ng-container matColumnDef="precio">
+                              <th mat-header-cell *matHeaderCellDef class="text-center"> Precio </th>
+                              <td mat-cell *matCellDef="let element"> {{element.precio}} </td>
+                            </ng-container>
+                          
+                            <!-- Weight Column -->
+                          
+                          
+                            <!-- Symbol Column -->
+                          
+        
+                         
+                                  <ng-container matColumnDef="ver">
+                                    <th mat-header-cell *matHeaderCellDef class="text-center"> Ver </th>
+                                    <td mat-cell *matCellDef="let element" class="text-center"> 
+                                       <button class="btn btn-success btn-sm" (click)="goToProduct(element.identificador)">
+                                            <mat-icon aria-hidden="false" aria-label="Example home icon">remove_red_eye</mat-icon>
+                                       </button> 
+                                      
+                                     </td>
+                                  
+                                  </ng-container>
+                                 
+                              
+                          
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+                          </table>
+                          
+        
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="row">
+            <div class="col-12">
+                <h5 class="text-center">LISTA DE EMPLEADOS</h5>
+                    <table mat-table [dataSource]="empleados" class="mat-elevation-z8">
+        
+                            <!--- Note that these columns can be defined in any order.
+                                  The actual rendered columns are set as a property on the row definition" -->
+                          
+                            <!-- Position Column -->
+                            <ng-container matColumnDef="identificador">
+                              <th mat-header-cell *matHeaderCellDef> Id </th>
+                              <td mat-cell *matCellDef="let element"> {{element.identificador}} </td>
+                            </ng-container>
+                          
+                            <!-- Name Column -->
+                            <ng-container matColumnDef="nombre">
+                              <th mat-header-cell *matHeaderCellDef class="text-center"> Nombre </th>
+                              <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+                            </ng-container>
+                          
+                            <!-- Weight Column -->
+                            <ng-container matColumnDef="carnet">
+                              <th mat-header-cell *matHeaderCellDef class="text-center"> Carnet </th>
+                              <td mat-cell *matCellDef="let element"> {{element.carnet}} </td>
+                            </ng-container>
+                          
+                            <!-- Symbol Column -->
+                          
+        
+                                  <ng-container matColumnDef="ver">
+                                    <th mat-header-cell *matHeaderCellDef class="text-center"> Ver </th>
+                                    <td mat-cell *matCellDef="let element" class="text-center"> 
+                                       <button class="btn btn-success btn-sm" (click)="goToView(element.identificador)">
+                                            <mat-icon aria-hidden="false" aria-label="Example home icon">remove_red_eye</mat-icon>
+                                       </button> 
+                                      
+                                     </td>
+                                  
+                                  </ng-container>
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                          </table>
+                          
+        
+            </div>
+        </div>
+        
     </div>
 </div>

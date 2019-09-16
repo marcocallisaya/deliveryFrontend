@@ -11,14 +11,14 @@ import { EmpleadoService } from '../empleado.service';
   templateUrl: './empleado.component.html',
   styleUrls: ['./empleado.component.css']
 })
-export class EmpleadoComponent implements OnInit, OnDestroy {
+export class EmpleadoComponent implements OnInit {
 
  //aqui
  empleados: empleado[] ;
 
  subscription:Subscription;
  dato:empleado;
- 
+ auto:boolean=true;
  //
    constructor(private empleado:EmpleadoService, private router:Router,public dialog: MatDialog) { }
  
@@ -31,7 +31,7 @@ export class EmpleadoComponent implements OnInit, OnDestroy {
    }
  
   
-  displayedColumns: string[] = ['identificador','nombre', 'carnet', 'cargo','ver','editar','eliminar'];
+  displayedColumns: string[] = ['identificador','nombre', 'carnet', 'cargo','ver','editar','eliminar','auto'];
   
   
  ver(codigo:number)
@@ -49,6 +49,13 @@ export class EmpleadoComponent implements OnInit, OnDestroy {
    this.router.navigate(['/menu',{outlets: {this: ['empleadoVista',id]}}],);
  }
  
+ goToAuto(id)
+ {this.empleado.empleadoAuto(id).subscribe((res:any)=>
+  this.router.navigate(['/menu',{outlets: {this: ['autoVista',res.data.identificador]}}],),
+  err=>console.log('no tiene auto')
+  );
+  
+ }
  
  delete(id)
  {
@@ -78,9 +85,15 @@ export class EmpleadoComponent implements OnInit, OnDestroy {
   
  }
  
- ngOnDestroy()
+ cargarAdm()
  {
-   
+   this.empleado.admnistrativoAll().subscribe((res:any)=>this.empleados=res.data);
+ }
+
+ cargarChr()
+ {
+   this.empleado.conductorAll().subscribe((res:any)=>this.empleados=res.data);
+ 
  }
 
 }

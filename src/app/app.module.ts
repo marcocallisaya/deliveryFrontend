@@ -27,6 +27,7 @@ import { DialogConfirmationComponent } from './dialog-confirmation/dialog-confir
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +36,7 @@ import { DialogConfirmationComponent } from './dialog-confirmation/dialog-confir
     MenuComponent,
     ContenidoComponent,
     DialogConfirmationComponent,
+   
   
     
     

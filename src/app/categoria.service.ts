@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {categoria} from './datos/categoria.model'
 import { Observable } from 'rxjs';
+import { producto } from './datos/producto.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -18,6 +19,12 @@ export class CategoriaService {
   {
     
     return this.http.get<categoria>(`${'http://127.0.0.1:8000/categorias/'}${id}`);
+  }
+
+  categoriaProducts(id:number):Observable<producto[]>
+  {
+    
+    return this.http.get<producto[]>(`${'http://127.0.0.1:8000/categoria/'}${id}${'/productos'}`);
   }
   categoriaBusqueda(filtro:string):Observable<categoria[]>
   {

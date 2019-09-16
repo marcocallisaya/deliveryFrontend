@@ -35,6 +35,11 @@
                                 <input matInput placeholder="Estado" required name="estado"  [(ngModel)]="dato.estado">
                                 </mat-form-field>
                </div>
+               <div class="form-group" *ngIf="formNew">
+                <mat-form-field class="input">
+                <input matInput placeholder="Sucursal" required name="sucursal"  [(ngModel)]="sucursal">
+                </mat-form-field>
+</div>
                <div class="form-group">
                     <mat-form-field class="input">
                     <input matInput placeholder="Proveedor" required name="proveedor"  [(ngModel)]="dato.proveedor">
@@ -46,7 +51,7 @@
         </mat-form-field>
 </div>
                                        
-                    <button *ngIf="formNew" (click)="send()" class="btn btn-success btn-lg btn-block" >Enviar</button>
+                    <button *ngIf="formNew" (click)="send(sucursal)" class="btn btn-success btn-lg btn-block" >Enviar</button>
                    
                 </form>
                 <button  *ngIf="formUpdate" class="btn btn-primary btn-lg btn-block" (click)="update()" >Actualizar</button>

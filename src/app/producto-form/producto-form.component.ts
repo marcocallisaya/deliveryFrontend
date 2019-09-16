@@ -27,9 +27,10 @@ export class ProductoFormComponent implements OnInit {
   formNew:boolean;
   formUpdate:boolean;
   codigo:number = 0;
-
+  sucursal:number=0;
 
   ngOnInit() {
+   
     this.route.paramMap.subscribe((params:ParamMap)=>
     {
       let id = parseInt(params.get('id'));
@@ -57,11 +58,14 @@ export class ProductoFormComponent implements OnInit {
       
   }
 
- 
-  send()
+  
+  send(sucursal)
   {
-   this.producto.send(this.dato).subscribe();
-    console.log('exitoso');
+   this.producto.send(this.dato,sucursal).subscribe(res=>console.log(res));
+   console.log('exitoso');
+  
+   
+   
    
   }
 

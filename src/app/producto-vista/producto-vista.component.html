@@ -1,5 +1,5 @@
 <div class="row">
-        <div class="col-5 offset-3">
+        <div class="col-6">
             <mat-card class="example-card">
                
                  
@@ -25,5 +25,50 @@
                         <button class="btn btn-block btn-lg btn-primary" (click)="back()">Volver Atras</button>
                 </mat-card-actions>
               </mat-card>
+        </div>
+        <div class="col-6">
+            <mat-card class="example-card">
+               
+                 
+                <mat-card-header>
+             
+                <mat-card-title >CATEGORIA N°{{categoria.identificador}}</mat-card-title>
+
+              
+              </mat-card-header>
+         
+              
+          
+            <mat-card-content>
+              <label> <b>Nombre :</b> {{categoria.nombre}}</label> <br>
+              <label> <b>Descripcion :</b>  {{categoria.descripcion}}</label> <br>
+           
+            </mat-card-content>
+            <mat-card-actions>
+                    <button class="btn btn-block btn-lg btn-primary" (click)="goToCategoria(categoria.identificador)">Ver Categoria</button>
+            </mat-card-actions>
+          </mat-card>
+          <br>
+          <mat-card class="example-card">
+               
+                 
+              <mat-card-header>
+           
+              <mat-card-title >PROVEEDOR N°{{proveedor.identificador}}</mat-card-title>
+
+            
+            </mat-card-header>
+       
+            
+        
+          <mat-card-content>
+            <label> <b>Nombre :</b> {{proveedor.nombre}}</label> <br>
+            <label> <b>Direccion :</b>  {{proveedor.direccion}}</label> <br>
+           
+          </mat-card-content>
+          <mat-card-actions>
+                  <button class="btn btn-block btn-lg btn-primary" (click)="goToProveedor(proveedor.identificador)">Ver Proveedor</button>
+          </mat-card-actions>
+        </mat-card>
         </div>
     </div>

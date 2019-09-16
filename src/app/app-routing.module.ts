@@ -24,6 +24,9 @@ import { ProductoVistaComponent } from './producto-vista/producto-vista.componen
 import { ProductoFormComponent } from './producto-form/producto-form.component';
 import { ProductoComponent } from './producto/producto.component';
 import { ReservaVistaComponent } from './reserva-vista/reserva-vista.component';
+import { AutoComponent } from './auto/auto.component';
+import { AutoFormComponent } from './auto-form/auto-form.component';
+import { AutoVistaComponent } from './auto-vista/auto-vista.component';
 
 const routes: Routes = [
   
@@ -57,6 +60,10 @@ const routes: Routes = [
     {path:'productoForm',component:ProductoFormComponent,outlet:'this'},
     {path:'productoForm/:id',component:ProductoFormComponent,outlet:'this'},
     {path:'productoVista/:id',component:ProductoVistaComponent,outlet:'this'},
+     {path:'auto',component:AutoComponent,outlet:'this'},
+    {path:'autoForm',component:AutoFormComponent,outlet:'this'},
+    {path:'autoForm/:id',component:AutoFormComponent,outlet:'this'},
+    {path:'autoVista/:id',component:AutoVistaComponent,outlet:'this'},
 
   ]},
  
@@ -93,5 +100,8 @@ export const RoutingComponents = [
     ProductoComponent,
     ProductoFormComponent,
     ProductoVistaComponent,
-    ReservaVistaComponent
+    ReservaVistaComponent,
+    AutoComponent,
+    AutoFormComponent,
+    AutoVistaComponent,
 ]

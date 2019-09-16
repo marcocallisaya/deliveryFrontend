@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProductoVistaComponent } from './producto-vista.component';
+import { AutoComponent } from './auto.component';
 
-describe('ProductoVistaComponent', () => {
-  let component: ProductoVistaComponent;
-  let fixture: ComponentFixture<ProductoVistaComponent>;
+describe('AutoComponent', () => {
+  let component: AutoComponent;
+  let fixture: ComponentFixture<AutoComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProductoVistaComponent ]
+      declarations: [ AutoComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProductoVistaComponent);
+    fixture = TestBed.createComponent(AutoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

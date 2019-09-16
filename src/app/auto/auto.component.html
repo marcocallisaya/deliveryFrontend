@@ -1,30 +1,31 @@
 <div class="row justify-content-around">
         <div class="col-4">
-            <a [routerLink]="['/menu', {outlets: {this: ['empleadoForm']}}]" class="btn btn-success btn-block">Nuevo Empleado</a>
+            <a [routerLink]="['/menu', {outlets: {this: ['autoForm']}}]" class="btn btn-success btn-block">Nuevo Auto</a>
         </div>
     
         <div class="col-4">
           <mat-form-field class="example-full-width col-8">
             
-            <input matInput [(ngModel)]="valor" (keyup)="keyup($event.target.value)" placeholder="Buscar"> <br>
+            <input matInput [(ngModel)]="valor" (keyup)="keyup($event.target.value)" placeholder="Buscar Placa"> <br>
            
           </mat-form-field>
         </div>
     </div>
     <label >{{mi}}</label>
     <div class="row justify-content-right">
-        <div class="col-6 ">
-          <button (click)="cargarAdm()" class="btn btn-secondary btn-block">Ver Administrativos</button>
+        <div class="col-6 offset-6 row">
+    
+                       
+        
+          
         </div>
-        <div class="col-6 ">
-            <button (click)="cargarChr()" class="btn btn-secondary btn-block">Ver Choferes</button>
-          </div>
+      
     </div>
     
     <div class="row">
         <div class="col-12">
     
-                <table mat-table [dataSource]="empleados" class="mat-elevation-z8">
+                <table mat-table [dataSource]="autos" class="mat-elevation-z8">
     
                         <!--- Note that these columns can be defined in any order.
                               The actual rendered columns are set as a property on the row definition" -->
@@ -34,28 +35,23 @@
                           <th mat-header-cell *matHeaderCellDef> Id </th>
                           <td mat-cell *matCellDef="let element"> {{element.identificador}} </td>
                         </ng-container>
-                      
                         <!-- Name Column -->
-                        <ng-container matColumnDef="nombre">
-                          <th mat-header-cell *matHeaderCellDef class="text-center"> Nombre </th>
-                          <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+                        <ng-container matColumnDef="modeloAuto">
+                                <th mat-header-cell *matHeaderCellDef class="text-center"> Modelo </th>
+                                <td mat-cell *matCellDef="let element"> {{element.modeloAuto}} </td>
+                              </ng-container>
+                        <!-- Name Column -->
+                        <ng-container matColumnDef="placaAuto">
+                          <th mat-header-cell *matHeaderCellDef class="text-center"> Placa </th>
+                          <td mat-cell *matCellDef="let element"> {{element.placaAuto}} </td>
                         </ng-container>
                       
-                        <!-- Weight Column -->
-                        <ng-container matColumnDef="carnet">
-                          <th mat-header-cell *matHeaderCellDef class="text-center"> Carnet </th>
-                          <td mat-cell *matCellDef="let element"> {{element.carnet}} </td>
-                        </ng-container>
+                       
                       
                         <!-- Symbol Column -->
                       
     
-                        <ng-container matColumnDef="cargo">
-                                <th mat-header-cell *matHeaderCellDef class="text-center"> Cargo </th>
-                                <td mat-cell *matCellDef="let element"> 
-                                    {{element.cargo}}
-                                 </td>
-                              </ng-container>
+                     
                               <ng-container matColumnDef="ver">
                                 <th mat-header-cell *matHeaderCellDef class="text-center"> Ver </th>
                                 <td mat-cell *matCellDef="let element" class="text-center"> 
@@ -78,22 +74,10 @@
                                   
                                  </td>
                               </ng-container>
-                              <ng-container matColumnDef="eliminar">
-                                <th mat-header-cell *matHeaderCellDef class="text-center"> Eliminar </th>
-                                <td mat-cell *matCellDef="let element" class="text-center"> 
-                                   <button href="#" class="btn btn-danger btn-sm" 
-                                  
-                                   (click)="openDialog(element.identificador)"
-                                   > 
-                                        <mat-icon>delete</mat-icon>
-                                   </button> 
-                                  
-                                 </td>
-                              </ng-container>
-                              <ng-container matColumnDef="auto">
-                                  <th mat-header-cell *matHeaderCellDef class="text-center"> Auto </th>
+                              <ng-container matColumnDef="conductor">
+                                  <th mat-header-cell *matHeaderCellDef class="text-center"> Conductor </th>
                                   <td mat-cell *matCellDef="let element" class="text-center"> 
-                                     <button (click)="goToAuto(element.identificador)"
+                                     <button (click)="goToConductor(element.conductor)"
                                       class="btn btn-primary btn-sm">
                                       <mat-icon>edit</mat-icon>
                                   </button>

@@ -1,0 +1,38 @@
+<div class="row">
+        <div class="col-8 offset-2">
+                <form action="" method="POST">
+                        <div class="form-group">
+                                <mat-form-field class="input">         
+                                    <input matInput placeholder="Modelo" required name="modeloAuto" 
+                                  [(ngModel)]="dato.modeloAuto">
+                                  </mat-form-field>
+                            </div>
+                            <div class="form-group">
+                                    <mat-form-field class="input">
+                                    <input matInput placeholder="Placa" required name="placaAuto" 
+                                        [(ngModel)]="dato.placaAuto"
+                                        >
+                                     </mat-form-field>
+                           </div>
+                           <div class="form-group">
+                                <mat-form-field class="input">         
+                                    <input matInput placeholder="Conductor" required name="conductor" 
+                                  [(ngModel)]="dato.conductor">
+                                  </mat-form-field>
+                            </div>
+                            <div class="form-group">
+                                    <mat-form-field class="input">
+                                    <input matInput placeholder="Fecha de Registro" required name="fechaCreacion" 
+                                        [(ngModel)]="dato.fechaCreacion"
+                                        >
+                                     </mat-form-field>
+                           </div>
+                    <button *ngIf="formNew" (click)="send()" class="btn btn-success btn-lg btn-block" >Enviar</button>
+                   
+                </form>
+                <button  *ngIf="formUpdate" class="btn btn-primary btn-lg btn-block" (click)="update()" >Actualizar</button>
+                <button class="btn btn-secondary btn-lg btn-block" (click)="back()">Volver Atras</button>
+        </div>
+    </div>
+    
+
