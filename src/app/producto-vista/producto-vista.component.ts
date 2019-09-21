@@ -20,7 +20,7 @@ export class ProductoVistaComponent implements OnInit {
        
     nombre:"J",
     precio:0.0,
-    imagen:"-",
+    img:"-",
     stock:0,
     reserva:0,
     estado:"-",
@@ -34,7 +34,7 @@ export class ProductoVistaComponent implements OnInit {
       let id = parseInt(params.get('id'));
       if (Number.isInteger(id))
       {
-        this.producto.productoOne(id).subscribe((res:any)=> this.dato=res.data);
+        this.producto.productoOne(id).subscribe((res:any)=> {this.dato=res.data,console.log(res)});
         this.producto.productoCategoria(id).subscribe((res:any)=> this.categoria=res.data);
         this.producto.productoProveedor(id).subscribe((res:any)=> this.proveedor=res.data);
       }

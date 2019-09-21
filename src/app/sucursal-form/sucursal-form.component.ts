@@ -57,14 +57,15 @@ export class SucursalFormComponent implements OnInit {
  
   send()
   {
-   this.Sucursal.send(this.dato).subscribe();
+   this.Sucursal.send(this.dato).subscribe(resp=>alert('Registrado Exitosamente'));
     console.log('exitoso');
-    this.router.navigate(['/menu',{outlets: {this: ['sucursal']}}]);
+   // this.router.navigate(['/menu',{outlets: {this: ['sucursal']}}]);
   }
 
   update()
   {
-    this.Sucursal.update(this.codigo,this.dato).subscribe(resp=>console.log(resp));
+    this.Sucursal.update(this.codigo,this.dato).subscribe(resp=>alert('Actualizado Exitosamente'),err=>alert('Actualizacion Fallo'));
+    
     
   }
 

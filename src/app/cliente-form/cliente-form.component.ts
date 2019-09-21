@@ -58,14 +58,14 @@ export class ClienteFormComponent implements OnInit {
  
   send()
   {
-   this.cliente.send(this.dato).subscribe();
+   this.cliente.send(this.dato).subscribe(res=>alert('Registro Exitoso'),err=>alert('Registro Fallido'));
     console.log('exitoso');
  
   }
 
   update()
   {
-    this.cliente.update(this.codigo,this.dato).subscribe(resp=>console.log(resp));
+    this.cliente.update(this.codigo,this.dato).subscribe(resp=>alert('Actualizacion Exitosa'),err=>alert('Actualizacion Fallida'));
     
   }
 

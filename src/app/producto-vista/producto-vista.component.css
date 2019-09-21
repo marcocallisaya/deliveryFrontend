@@ -10,3 +10,7 @@
   label {
       font-size: 1.2rem;
   }
+
+  .imagen img {
+    width: 100%;
+  }

@@ -1,6 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { EmpleadoService } from '../empleado.service';
+import { SucursalServiceService } from '../sucursal-service.service';
+import { sucursal } from '../datos/sucursal.model';
+
+export interface Cargo {
+  value: string;
+  viewValue: string;
+}
+
 @Component({
   selector: 'app-empleado-form',
   templateUrl: './empleado-form.component.html',
@@ -8,9 +16,15 @@ import { EmpleadoService } from '../empleado.service';
 })
 export class EmpleadoFormComponent implements OnInit {
 
-  constructor(private empleado:EmpleadoService,private route:ActivatedRoute,private router:Router) {  }
+  foods: Cargo[] = [
+    {value: 'Cajero', viewValue: 'Cajero'},
+    {value: 'Chofer', viewValue: 'Chofer'},
+    
+  ];
 
-  
+  constructor(private empleado:EmpleadoService,private route:ActivatedRoute,private router:Router,private sucursal:SucursalServiceService) {  }
+
+  sucursals:sucursal[];
 
   public dato={
     identificador:0,
@@ -52,7 +66,7 @@ export class EmpleadoFormComponent implements OnInit {
       
       });
 
-
+    this.sucursal.sucursalAll().subscribe((res:any)=>this.sucursals=res.data);
     console.log(this.dato);
       
   }
@@ -60,14 +74,14 @@ export class EmpleadoFormComponent implements OnInit {
  
   send()
   {
-   this.empleado.send(this.dato).subscribe();
+   this.empleado.send(this.dato).subscribe(res=>alert('Registrado Exitosamente'),err=>alert('Registro Fallido'));
     console.log('exitoso');
    // this.router.navigate(['/menu',{outlets: {this: ['empleado']}}]);
   }
 
   update()
   {
-    this.empleado.update(this.codigo,this.dato).subscribe(resp=>console.log(resp));
+    this.empleado.update(this.codigo,this.dato).subscribe(resp=>alert('Actualizado Exitosamente'),err=>alert('Actualizacion Fallida'));
     
   }
 

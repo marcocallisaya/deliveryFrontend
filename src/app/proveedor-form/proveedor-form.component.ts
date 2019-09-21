@@ -56,14 +56,14 @@ export class ProveedorFormComponent implements OnInit {
  
   send()
   {
-   this.proveedor.send(this.dato).subscribe();
+   this.proveedor.send(this.dato).subscribe(res=>alert('Registrado Exitosamente'),err=>alert('Registro Fallido'));
     console.log('exitoso');
     
   }
 
   update()
   {
-    this.proveedor.update(this.codigo,this.dato).subscribe(resp=>console.log(resp));
+    this.proveedor.update(this.codigo,this.dato).subscribe(res=>alert('Actualizacion Exitosa'),err=>alert('Actualizacion Fallida'));
     
   }
 

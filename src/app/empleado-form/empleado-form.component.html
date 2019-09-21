@@ -41,16 +41,26 @@
                                    </div>
                                       
                                    <div class="form-group">
-                                                <mat-form-field class="input">
-                                                <input matInput placeholder="Cargo" required name="cargo" [(ngModel)]="dato.cargo">
-                                                </mat-form-field>
+                                    <mat-form-field class="input" name="cargo">
+                                        <mat-label>Cargo</mat-label>
+                                        <mat-select [(value)]="dato.cargo">
+                                                <mat-option *ngFor="let food of foods" [value]="food.value">                                            {{food.viewValue}}
+                                                  </mat-option>
+                                                        </mat-select>
+                                </mat-form-field>
                                    </div>
-                                          
+                                    
                                    <div class="form-group">
-                                                    <mat-form-field class="input">
-                                                    <input matInput placeholder="Sucursal" required name="sucursal"  [(ngModel)]="dato.sucursal">
-                                                    </mat-form-field>
-                                   </div>  
+                                                <mat-form-field class="input" name="sucursal"> 
+                                                    <mat-label>Sucursal</mat-label>
+                                                    <mat-select [(value)]="dato.sucursal">
+                                                            <mat-option *ngFor="let sucursal of sucursals" [value]="sucursal.identificador">                                            {{sucursal.nombre}}
+                                                              </mat-option>
+                                                                    </mat-select>
+                                            </mat-form-field>
+                                               </div>
+
+                               
                                    <div class="form-group" *ngIf="formNew">
                                                 <mat-form-field class="input">
                                                 <input matInput placeholder="Contraseña" required name="contrasena" type="password" [(ngModel)]="dato.contrasena">

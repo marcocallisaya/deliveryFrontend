@@ -56,14 +56,14 @@ export class CategoriaFormComponent implements OnInit {
  
   send()
   {
-   this.categoria.send(this.dato).subscribe();
+   this.categoria.send(this.dato).subscribe(res=>alert('Registrado Exitosamente'),err=>alert('Registro Fallido'));
     console.log('exitoso');
    
   }
 
   update()
   {
-    this.categoria.update(this.codigo,this.dato).subscribe(resp=>console.log(resp));
+    this.categoria.update(this.codigo,this.dato).subscribe(res=>alert('Actualizacion Exitosa'),err=>alert('Actualizacion Fallida'));
     
   }
 

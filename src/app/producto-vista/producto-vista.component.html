@@ -20,6 +20,13 @@
                   <label> <b>Estado :</b>  {{dato.estado}}</label> <br>
                   <label> <b>Proveedor :</b>  {{dato.proveedor}}</label> <br>
                   <label> <b>Categoria :</b>  {{dato.categoria}}</label> <br>
+                  
+                  <div class="imagen row">
+                    <div class="col-12">
+                        <img [src]="dato.img" alt="">
+                    </div>
+                  
+                  </div>
                 </mat-card-content>
                 <mat-card-actions>
                         <button class="btn btn-block btn-lg btn-primary" (click)="back()">Volver Atras</button>

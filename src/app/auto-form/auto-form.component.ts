@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { AutoService } from '../auto.service';
+import { EmpleadoService } from '../empleado.service';
+import { empleado } from '../datos/empleado.model';
 
 @Component({
   selector: 'app-auto-form',
@@ -10,9 +12,9 @@ import { AutoService } from '../auto.service';
 export class AutoFormComponent implements OnInit {
 
    
-  constructor(private auto:AutoService,private route:ActivatedRoute,private router:Router) {  }
+  constructor(private auto:AutoService,private route:ActivatedRoute,private router:Router,private conductor:EmpleadoService) {  }
 
-  
+  conductors:empleado[];
 
   public dato={
     modeloAuto: "-",
@@ -49,22 +51,22 @@ export class AutoFormComponent implements OnInit {
       
       });
 
-
-    console.log(this.dato);
+      this.conductor.conductorAll().subscribe((res:any)=>{this.conductors=res.data,console.log(this.dato)});
+    
       
   }
 
  
   send()
   {
-   this.auto.send(this.dato).subscribe();
+   this.auto.send(this.dato).subscribe(res=>alert('Registrado Exitosamente'),err=>alert('Registro Fallido'));
     console.log('exitoso');
    
   }
 
   update()
   {
-    this.auto.update(this.codigo,this.dato).subscribe(resp=>console.log(resp));
+    this.auto.update(this.codigo,this.dato).subscribe(res=>alert('Actualizacion Exitosa'),err=>alert('Actualizacion Fallida'));
     
   }
 

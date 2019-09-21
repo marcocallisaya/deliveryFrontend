@@ -1,57 +1,83 @@
 <div class="row">
         <div class="col-8 offset-2">
-                <form action="" method="POST">
+                <form [formGroup]="myForm" (ngSubmit)="enviar(myForm)"  enctype="multipart/form-data" >
                         <div class="form-group">
                                 <mat-form-field class="input">         
                                     <input matInput placeholder="Nombre" required name="nombre" 
-                                  [(ngModel)]="dato.nombre">
+                                  [(ngModel)]="dato.nombre" formControlName="nombre">
                                   </mat-form-field>
                             </div>
                             <div class="form-group">
                                     <mat-form-field class="input">
                                     <input matInput placeholder="Precio" required name="precio" 
-                                        [(ngModel)]="dato.precio"
+                                        [(ngModel)]="dato.precio" formControlName="precio"
                                         >
                                      </mat-form-field>
                            </div>
                               
                            <div class="form-group">
                                         <mat-form-field class="input">
-                                        <input matInput placeholder="Stock" required name="stock" [(ngModel)]="dato.stock">
+                                        <input matInput placeholder="Stock" required name="stock" [(ngModel)]="dato.stock" formControlName="stock">
                                         </mat-form-field>
                            </div>
                            <div class="form-group">
                                 <mat-form-field class="input">
-                                <input matInput placeholder="imagen" required name="imagen" [(ngModel)]="dato.imagen">
-                                </mat-form-field>
-                   </div>     
+                                <input matInput placeholder="Link de Imagen" required name="img" 
+                                    [(ngModel)]="dato.img" formControlName="img"
+                                    >
+                                 </mat-form-field>
+                       </div>    
                            <div class="form-group">
                                             <mat-form-field class="input">
-                                            <input matInput placeholder="Reserva" required name="reserva"  [(ngModel)]="dato.reserva">
+                                            <input matInput placeholder="Reserva" required name="reserva"  [(ngModel)]="dato.reserva" formControlName="reserva">
                                             </mat-form-field>
                            </div>
                            <div class="form-group">
-                                <mat-form-field class="input">
-                                <input matInput placeholder="Estado" required name="estado"  [(ngModel)]="dato.estado">
-                                </mat-form-field>
-               </div>
-               <div class="form-group" *ngIf="formNew">
+                                        <mat-form-field class="input" > 
+                                            <mat-label>Estado</mat-label>
+                                            <mat-select name="estado" [(value)]="dato.estado" formControlName="estado">
+                                                    <mat-option *ngFor="let estado of estados" [value]="estado.estado" >                                             {{estado.estado}}
+                                                      </mat-option>
+                                                            </mat-select>
+                                    </mat-form-field>
+                                       </div>
+              <!--  <div class="form-group" *ngIf="formNew">
                 <mat-form-field class="input">
                 <input matInput placeholder="Sucursal" required name="sucursal"  [(ngModel)]="sucursal">
                 </mat-form-field>
-</div>
+</div> -->
+<div class="form-group" *ngIf="formNew">
+                <mat-form-field class="input" name="sucursal"> 
+                    <mat-label>Sucursal</mat-label>
+                    <mat-select [(value)]="dato.sucursal" formControlName="sucursal">
+                            <mat-option *ngFor="let sucursal of sucursals" [value]="sucursal.identificador">                                            {{sucursal.nombre}}
+                              </mat-option>
+                                    </mat-select>
+            </mat-form-field>
+ </div>
                <div class="form-group">
-                    <mat-form-field class="input">
-                    <input matInput placeholder="Proveedor" required name="proveedor"  [(ngModel)]="dato.proveedor">
+                        <mat-form-field class="input" > 
+                            <mat-label>Proveedor</mat-label>
+                            <mat-select name="proveedor" [(ngModel)]="dato.proveedor" formControlName="proveedor">
+                                    <mat-option *ngFor="let proveedor of proveedors" [value]="proveedor.identificador" >                                            {{proveedor.nombre}}
+                                      </mat-option>
+                                            </mat-select>
                     </mat-form-field>
-   </div>
-   <div class="form-group">
-        <mat-form-field class="input">
-        <input matInput placeholder="Categoria" required name="categoria"  [(ngModel)]="dato.categoria">
-        </mat-form-field>
-</div>
+                       </div>
+                       <div class="form-group">
+                                <mat-form-field class="input"> 
+                                    <mat-label>Categoria</mat-label>
+                                    <mat-select  name="categoria" [(ngModel)]="dato.categoria" formControlName="categoria" >
+                                            <mat-option *ngFor="let categoria of categorias" [value]="categoria.identificador">                     {{categoria.nombre}}
+                                              </mat-option>
+                                                    </mat-select>
+                            </mat-form-field>
+                               </div>
+                             
                                        
-                    <button *ngIf="formNew" (click)="send(sucursal)" class="btn btn-success btn-lg btn-block" >Enviar</button>
+                    <button *ngIf="formNew" 
+                    type="submit"
+                     class="btn btn-success btn-lg btn-block" >Enviar</button>
                    
                 </form>
                 <button  *ngIf="formUpdate" class="btn btn-primary btn-lg btn-block" (click)="update()" >Actualizar</button>
