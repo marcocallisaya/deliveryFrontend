@@ -1,0 +1,59 @@
+<div class="row">
+    <div class="col-8 offset-2">
+            <form action="" method="POST">
+                    <div class="form-group">
+                            <mat-form-field class="input">         
+                                <input matInput placeholder="Precio" required name="precio" 
+                              [(ngModel)]="dato.precio">
+                              </mat-form-field>
+                        </div>
+                        <div class="form-group">
+                            <mat-form-field class="input"> 
+                                <mat-label>Estado</mat-label>
+                                <mat-select [(value)]="dato.estado" >
+                                        <mat-option  value="finalizado">                                            Finalizado
+                                          </mat-option>
+                                          <mat-option  value="espera">                                            En espera
+                                        </mat-option>
+                                        <mat-option  value="reserva">                                            En reserva
+                                        </mat-option>
+                                                </mat-select>
+                        </mat-form-field>
+                </div>
+                       <div class="form-group">
+                                    <mat-form-field class="input"> 
+                                        <mat-label>Cliente</mat-label>
+                                        <mat-select [(value)]="dato.cliente" readonly>
+                                                <mat-option *ngFor="let cliente of clientes" [value]="cliente.identificador">                                            {{cliente.nombre}}
+                                                  </mat-option>
+                                                        </mat-select>
+                                </mat-form-field>
+                        </div>
+                        <div class="form-group">
+                            <mat-form-field class="input"> 
+                                <mat-label>Conductor</mat-label>
+                                <mat-select [(value)]="dato.conductor">
+                                        <mat-option *ngFor="let conductor of conductors" [value]="conductor.identificador">                                            {{conductor.nombre}}
+                                          </mat-option>
+                                                </mat-select>
+                        </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field class="input"> 
+                        <mat-label>Administrador</mat-label>
+                        <mat-select [(value)]="dato.administrador">
+                                <mat-option *ngFor="let administrador of administradors" [value]="administrador.identificador">                                            {{administrador.nombre}}
+                                  </mat-option>
+                                        </mat-select>
+                </mat-form-field>
+        </div>
+               
+               
+            </form>
+            <button  class="btn btn-primary btn-lg btn-block" (click)="update()" >Finalizar Pedido</button>
+            <button class="btn btn-secondary btn-lg btn-block" (click)="back()">Volver Atras</button>
+    </div>
+</div>
+
+
+

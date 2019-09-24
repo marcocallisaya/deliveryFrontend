@@ -13,7 +13,7 @@ export class JarvisService {
   }
 
   login(data){
-  return  this.http.post('http://localhost:8000/auth/login',data)
+  return  this.http.post('http://localhost:8000/au/login',data)
   }
 //
   get(token:string){

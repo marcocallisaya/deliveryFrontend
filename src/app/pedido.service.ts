@@ -44,6 +44,10 @@ export class PedidoService {
     return this.http.get<pedido[]>('http://127.0.0.1:8000/pedidosB?filtro='+filtro);
   }
   
+  update(codigo,data)
+  {
+    return this.http.put<pedido>(`${'http://127.0.0.1:8000/pedidos/'}${codigo}`,data);
+  }
   
   
 }

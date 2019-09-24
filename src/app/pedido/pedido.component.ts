@@ -39,7 +39,7 @@ ver(codigo:number)
 
 goToView(id)
 {
-  this.router.navigate(['/menu',{outlets: {this: ['pedidoVista',id]}}],);
+  this.router.navigate(['/menu',{outlets: {this: ['pedidoForm',id]}}],);
 }
 
 

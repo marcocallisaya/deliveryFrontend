@@ -44,6 +44,7 @@ ver(codigo:number)
 }
 
 goToPage(id) {
+  
   this.router.navigate(['/menu',{outlets: {this: ['sucursalForm',id]}}],);
 }
 

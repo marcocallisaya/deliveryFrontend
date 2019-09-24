@@ -28,6 +28,9 @@ import { AutoComponent } from './auto/auto.component';
 import { AutoFormComponent } from './auto-form/auto-form.component';
 import { AutoVistaComponent } from './auto-vista/auto-vista.component';
 import { AfterloginService } from './afterlogin.service';
+import { PedidoFormComponent } from './pedido-form/pedido-form.component';
+import { ReservaFormComponent } from './reserva-form/reserva-form.component';
+
 
 const routes: Routes = [
   
@@ -47,8 +50,10 @@ const routes: Routes = [
     {path:'clienteVista/:id',component:ClienteVistaComponent,outlet:'this'},
     {path:'pedido',component:PedidoComponent,outlet:'this'},
     {path:'pedidoVista/:id',component:PedidoVistaComponent,outlet:'this'},
+    {path:'pedidoForm/:id',component:PedidoFormComponent,outlet:'this'},
     {path:'reserva',component:ReservaComponent,outlet:'this'},
     {path:'reservaVista/:id',component:ReservaVistaComponent,outlet:'this'},
+    {path:'reservaForm/:id',component:ReservaFormComponent,outlet:'this'},
     {path:'categoria',component:CategoriaComponent,outlet:'this'},
     {path:'categoriaForm',component:CategoriaFormComponent,outlet:'this'},
     {path:'categoriaForm/:id',component:CategoriaFormComponent,outlet:'this'},
@@ -105,4 +110,6 @@ export const RoutingComponents = [
     AutoComponent,
     AutoFormComponent,
     AutoVistaComponent,
+    ReservaFormComponent,
+    PedidoFormComponent
 ]

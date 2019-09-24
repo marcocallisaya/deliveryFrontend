@@ -26,5 +26,8 @@ export class ReservaService {
     return this.http.get<reserva[]>('http://127.0.0.1:8000/reservasB?filtro='+filtro);
   }
   
-  
+  delete(id:number)
+  {
+    return this.http.delete<reserva>(`${'http://127.0.0.1:8000/reservas/'}${id}`);
+  }
 }
