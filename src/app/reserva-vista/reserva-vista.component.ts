@@ -9,6 +9,10 @@ import { ReservaService } from '../reserva.service';
 })
 export class ReservaVistaComponent implements OnInit {
 
+  
+
+  displayedColumns: string[] = ['nombre', 'precio', 'estado','ver'];
+
   constructor(private reserva:ReservaService,private route:ActivatedRoute,private router:Router) { }
   public dato=
     

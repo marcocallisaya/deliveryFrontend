@@ -48,6 +48,11 @@ export class PedidoService {
   {
     return this.http.put<pedido>(`${'http://127.0.0.1:8000/pedidos/'}${codigo}`,data);
   }
+
+  cantidad(pedido:number,producto:number)
+  {
+    return this.http.get<any>('http://127.0.0.1:8000/cantidad?producto='+producto+'&pedido='+pedido);
+  }
   
   
 }

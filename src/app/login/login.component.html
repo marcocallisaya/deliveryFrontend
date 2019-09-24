@@ -12,23 +12,23 @@
                 {{error}}
               </div>
               <div class="form-group row">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-10">
+                <label for="inputEmail3" class="col-sm-4 col-form-label">Email</label>
+                <div class="col-sm-8">
                   <input type="email" class="form-control" id="inputEmail3" placeholder="Email" [(ngModel)]="form.email" required name="email">
                 </div>
               </div>
               <div class="form-group row">
-                <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-                <div class="col-sm-10">
+                <label for="inputPassword3" class="col-sm-4 col-form-label">Password</label>
+                <div class="col-sm-8">
                   <input type="password" class="form-control" id="inputPassword3" placeholder="Password" [(ngModel)]="form.password" required name="password">
                 </div>
               </div>
              
             
               <div class="form-group row">
-                <div class="offset-2 col-sm-10">
-                  <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Sign in</button>
-                  <a routerLink="/signup" class="btn btn-info float-right">SignUp</a>
+                <div class=" col-sm-12">
+                  <button type="submit" class="btn btn-primary btn-block" [disabled]="!loginForm.valid">Ingresar</button>
+                 
                 </div>
                 
               </div>

@@ -6,3 +6,11 @@ form {
 mat-form-field {
     width: 100%;
 }
+
+.mat-elevation-z8 {
+    width: 100%;
+}
+
+.data {
+    margin-top: 20px;
+}
